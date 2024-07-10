@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Snacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="Images/logo.png" width="200px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                <li><a href="home.php">Home</a></li>
+                    <li><a href="products.php">Product</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="userprofile.php"><h4>Hello, <?php echo $_SESSION["name"]; ?></h4></a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+            <a href="cart.php"><img src="Images/Cart.png" width="50px" height="40px"></a>
+            <img src="Images/menu-icon.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+</div>
+
+<!-- Ordered items -->
+<div class="ordered">
+    <div class="small-conatiner">
+        <h2 class="title">Ordered Details</h2>
+        <div class="order-container">
+            <div class="row">
+                <div class="details">
+                    <div class="col-3">
+                            <?php if (isset($_GET["error"])) { ?>
+                            <p class="error"><?php echo $_GET["error"]; ?></p>
+                            <?php } ?>
+            
+                            <?php if (isset($_GET["success"])) { ?>
+                                    <p class="success"><?php echo $_GET["success"]; ?></p>
+                            <?php } ?>
+            
+                            <h4>Aniket Gami</h4><br>
+                            <h4>aniketpatel2803</h4><br>
+                            <h4>9029614478</h4><br>
+                            <label>Address:</label>
+                            <h4>206, Thakur Charan Dham Building, Koldongri, Sahar Road ,Andheri (East), Mumbai-400069</h4><br>
+                            <a href="home.php"><button class="btn-home">Home</button></a>
+                        </div>
+                </div>
+                <div class="orders">
+                    <div class="col-3">
+                        <h4 class="title">Ordered Products</h4>
+                        <label>Payment Methods:</label>
+                        <h4>COD</h4><br>
+            
+                        <label>Quantity</label>
+                        <h4>5,6,8,9</h4><br>
+            
+                        <label>Produts</label>
+                        <h4>Pototo, Stick, Wafers, Banana</h4><br><br>
+                        <a href="cancel-order.php"><button class="btn-cancel">Cancel your Order</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

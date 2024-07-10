@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Snacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="Images/logo.png" width="200px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Account</a></li>
+                </ul>
+            </nav>
+            <img src="Images/menu-icon.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+<!-- Account Page -->
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="Images/logo.png" width="80%">
+            </div>
+
+            <div class="col-2">
+                <div class="form-conatainer">
+                    <div class="form-btn">
+                        <span>Login</span>
+                    </div>
+                    <form action="login.php" id="LoginForm" method="post">
+
+                        <?php if (isset($_GET["error"])) { ?>
+                                <p class="error"><?php echo $_GET["error"]; ?></p>
+                            <?php } ?>
+                            <?php if (isset($_GET["success"])) { ?>
+                                <p class="success"><?php echo $_GET["success"]; ?></p>
+                            <?php } ?>
+                            
+                        <h4>Sign in here</h4>
+                        <input type="text" placeholder="User Name" name="uname">
+                        <input type="password" placeholder="Password" name="password" id="pass">
+                        <div class="checkbox">
+                            <input type="checkbox" onclick="change()">
+                            <label>Show Password</label>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <a href="#">Forget Password?</a>
+                        <a href="signup.php">New User</a>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <div class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo.png" width="200px">
+                </div>
+                <div class="footer-col-2">
+                    <h3>Address:</h3>
+                    <p>Plot No. 18,Bhavani Nagar,</br>Zenith Co-op.Hsg.Soc, Shop-12/13,<br>Marol,Andheri(E),Mumbai-59</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Terms & Conditions</h3>
+                    <ul>
+                        <li>How to Buys</li>
+                        <li>Returns & Exchange</li>
+                        <li>Delivery</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facbook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <hr>
+            <p class="copyright">Copyright2021-Lucky Snacks</p>
+        </div>
+    </div>
+
+<!-- JS for Toggle Menu -->
+<script>
+    var MenuItems=document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0px")
+        {
+            MenuItems.style.maxHeight="200px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight="0px";
+        }
+    }
+    //  Show Password  
+var pass = document.getElementById('pass');
+    function change(){
+        if (pass.type =="password"){
+            pass.type='text';
+        }else{
+            pass.type="password";
+        }
+    }
+</script>
+
+
+</body>
+</html>

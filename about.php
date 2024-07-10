@@ -1,0 +1,180 @@
+<?php
+session_start();
+if (isset($_SESSION["id"]) && isset($_SESSION["username"]))
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Snacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="Images/logo.png" width="200px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="products.php">Product</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="userprofile.php" class="dropbtn"><h4>Hello, <?php echo $_SESSION["name"]; ?></h4></a>
+                            <div class="dropdown-content">
+                                <a href="viewprofile.php"><h4>View Profile</h4></a>
+                                <a href="userprofile.php"><h4>Update Profile</h4></a>
+                                <a href="Change_password.php"><h4>Change Password</h4></a>
+                                <a href="order_history.php"><h4>Order History</h4></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+            <a href="cart.php"><img src="Images/Cart.png" width="50px" height="40px"></a>
+            <img src="Images/menu-icon.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+</div>
+</div>
+<div class="small-conatiner">
+    <div class="about-us">
+        <div class="content">
+            <h2 class="title">About Lucky Snacks</h2>
+            <p>A very goods day for you. SO, let us talk about something great i.e., Lucky Snacks(MIDC). I hope that this
+                shop make your breakfast, so comfartablly everyday by ordering from here limitless. Sweets Memories with
+                your friends, family , neighbour and  guests too. This helps a lot to us. Thank You A lots....
+            </p>
+            <aside class="owner"> -Shamji Vaviya</aside>
+        </div>
+    </div>
+</div>
+<div class="small-conatiner">
+    <div class="about-details">
+        <div class="row">
+            <div class="col-3">
+                <img src="Images/Profile-Pix.jpg">
+            </div>
+            <div class="col-3">
+                <h2 class="title">Introduction</h2>
+                <p> I'm Shmaji Vaviya Owner of Lucky Snacks started in the year 2010. I make all dealed that make my shop
+                     to grow more & more. That, I had make my employees loyal to the customers as well as to me. It make 
+                    goods for the customers to buy the indiviadual items or in stocks with fully satisfactions. I then 
+                    started new few shop in the year 2015 which are given below the page & later on many in different places.
+                    Whatever I have that is good enough from the one & only Lucky Snacks.
+                </p>
+            </div>
+            <div class="col-3">
+                <h2 class="title">Items that we sell</h2>
+                <ul>
+                    <li>Biscuits</li>
+                    <li>Farsan</li>
+                    <li>Sweets</li>
+                    <li>Bekary Items</li>
+                    <li>Chats</li>
+                </ul>
+                <P>We Also Served Tea, PaniPuri, Dosa, Frenky outside the shop of LUcky snacks</P>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Branches -->
+<div class="branch">
+    <div class="small-conatiner">
+        <h2 class="title">Branches of Lucky Snacks</h2>
+        <div class="row">
+            <div class="col-1">
+                <center><big>Yashvi Super Market</big></center>
+                <p>Shop No.5,Bhawani Tower,Plot No. 18,Marol<br>Maroshi Road,Andheri(E),Mumbai-59</p>
+            </div>
+            <div class="col-1">
+                <center><big>Tanvi Super Market</big></center>
+                <p>Shop No.4,Acropolis, Military Road,<br>Andheri(E),Mumbai-59</p>
+            </div>
+            <div class="col-1">
+                <cemnter><big>Prabhat Super Market</big></cemnter>
+                <p>Shop No.1/2, Orchid Palace,Marol Military Road,<br>Andheri(E),Mumbai-59</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <center><big>Tanisha Super Market</big></center>
+                <p>Shop No.E/6-7,Nahar's Options Shopping Plaza,<br>Nahar Amrit Shakti,Chandivali,Powai,Mumbai-72</p>
+            </div>
+            <div class="col-1">
+                <center><big>Lucky Cleaners</big></center>
+                <p>Plot No. 18,Bhavani Nagar,Zenth Hsg,Shop No. 26<br>Marol,Andheri(E),Mumbai-59</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Footer -->
+    <div class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo.png" width="200px">
+                </div>
+                <div class="footer-col-2">
+                    <h3>Address:</h3>
+                    <p>Plot No. 18,Bhavani Nagar,</br>Zenith Co-op.Hsg.Soc, Shop-12/13,<br>Marol,Andheri(E),Mumbai-59</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Terms & Conditions</h3>
+                    <ul>
+                        <li>How to Buys</li>
+                        <li>Returns & Exchange</li>
+                        <li>Delivery</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facbook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <hr>
+            <p class="copyright">Copyright2021-Lucky Snacks</p>
+        </div>
+    </div>
+
+<!-- JS for Toggle Menu -->
+<script>
+    var MenuItems=document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0px")
+        {
+            MenuItems.style.maxHeight="210px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight="0px";
+        }
+    }
+</script>
+</body>
+</html>
